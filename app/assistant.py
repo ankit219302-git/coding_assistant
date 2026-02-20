@@ -16,7 +16,7 @@ user_prompt = input("Please enter your coding question: ")
 # For a simple user prompt
 # response = client.responses.create(
 #     model="gpt-5",
-#     input="Write a one-sentence bedtime story about a bronzoni."
+#     input="What is constructor in Java. Is it like Bob (the Builder)?"
 # )
 
 # For combining user prompt with system prompt
