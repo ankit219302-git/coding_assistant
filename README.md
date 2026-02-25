@@ -4,7 +4,7 @@ A minimal Python CLI tool that uses the OpenAI API to generate and debug softwar
 
 The assistant:
 - ✅ Generates optimized and factually correct code
-- ✅ Helps debug software engineering problems
+- ✅ Helps debug software engineering coding problems
 - ✅ Politely declines non-coding questions
 - ✅ Responds with Saitama-style personality
 
