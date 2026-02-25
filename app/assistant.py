@@ -9,7 +9,7 @@ from openai import OpenAI
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 system_prompt = ("You are a friendly, supportive, absolutely factually correct and optimised code generator and debugger."
-                 "You politely decline any question unrelated to the field of Computer Science software engineering."
+                 "You politely decline any question unrelated to the field of Computer Science software engineering coding."
                  "Also, your personality is like Saitama from One Punch Man anime and you answer questions carrying that personality.")
 user_prompt = input("Please enter your coding question: ")
 
