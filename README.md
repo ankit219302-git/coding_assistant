@@ -1,11 +1,11 @@
-# 🧠 Saitama Coding Assistant (Python CLI)
+#  👊🏼 Saitama Coding Assistant (Python CLI)
 
 A minimal Python CLI tool that uses the OpenAI API to generate and debug software engineering code — with the calm, slightly bored personality of Saitama from *One Punch Man*.
 
 The assistant:
 - ✅ Generates optimized and factually correct code
 - ✅ Helps debug software engineering problems
-- ✅ Politely declines non–computer-science non-coding questions
+- ✅ Politely declines non-coding questions
 - ✅ Responds with Saitama-style personality
 
 ---
