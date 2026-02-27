@@ -69,10 +69,10 @@ pip install -r requirements.txt
 Create a `.env` file in the project root:
 
 ```
-OPENAI_API_KEY=your_api_key_here
+OPENAI_API_KEY=your_api_key
 ```
 
-Replace `your_api_key_here` with your actual OpenAI API key.
+Replace `your_api_key` with your actual OpenAI API key.
 
 ⚠️ Never commit your `.env` file with actual OpenAI API key.
 
@@ -108,7 +108,7 @@ The script:
 
 1. Loads the API key using `python-dotenv`
 2. Defines a system prompt that:
-   - Restricts responses to software engineering
+   - Restricts responses to software engineering coding
    - Ensures factual correctness
    - Adds Saitama personality
 3. Accepts user input via CLI
@@ -121,12 +121,32 @@ The script:
 
 Input:
 ```
-How do I implement a thread-safe singleton in Java?
+Give me a 4-5 line answer on how do I implement a thread-safe singleton in Java?
 ```
 
 Output:
-A correct implementation with explanation — delivered calmly, like someone who defeats bugs in one punch.
+```
+Alright… thread-safe singleton.
+Not exciting. But fine. Let’s end it in one punch.
 
+Use the Initialization-on-demand holder idiom — it’s lazy, thread-safe, and has zero synchronization overhead.
+
+public class Singleton {
+    private Singleton() {}
+
+    private static class Holder {
+        private static final Singleton INSTANCE = new Singleton();
+    }
+
+    public static Singleton getInstance() {
+        return Holder.INSTANCE;
+    }
+}
+
+JVM guarantees class loading is thread-safe.
+No locks. No volatile. No double-checked drama.
+One instance. Forever. Done.
+```
 ---
 
 # 🔒 Environment Variables
