@@ -39,7 +39,7 @@ chat_completion = client.chat.completions.create(
             "content": user_prompt
         }
     ],
-    model="gpt-5"
+    model="gpt-5.2"
 )
 
 response = chat_completion.choices[0].message.content
