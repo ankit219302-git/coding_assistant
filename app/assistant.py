@@ -1,6 +1,7 @@
 import os
 
 from dotenv import load_dotenv
+from openai.types.responses import EasyInputMessageParam
 
 load_dotenv()
 # this will give precedence to the entry in .env file even if system environment variable is set
@@ -21,26 +22,44 @@ system_prompt = ("You are a friendly, supportive, absolutely factually correct a
                  "So, always add a Saitama personal touch in every answer.")
 user_prompt = input("Please enter your coding question: ")
 
-# For a simple user prompt
+# For a simple user text prompt
 # response = client.responses.create(
-#     model="gpt-5",
-#     input="What is constructor in Java. Is it like Bob (the Builder)?"
+#     input=user_prompt,
+#     model="gpt-5.2"
 # )
+# print(response.output_text)
 
 # For combining user prompt with system prompt
-chat_completion = client.chat.completions.create(
-    messages=[
-        {
-            "role": "system",
-            "content": system_prompt
-        },
-        {
-            "role": "user",
-            "content": user_prompt
-        }
-    ],
+# chat_completion = client.chat.completions.create(
+#     messages=[
+#         {
+#             "role": "system",
+#             "content": system_prompt
+#         },
+#         {
+#             "role": "user",
+#             "content": user_prompt
+#         }
+#     ],
+#     model="gpt-5.2"
+# )
+# response = chat_completion.choices[0].message.content
+# print(response)
+
+messages: list[EasyInputMessageParam] = [
+    {
+        "role": "system",
+        "content": system_prompt
+    },
+    {
+        "role": "user",
+        "content": user_prompt
+    },
+]
+
+response = client.responses.create(
+    input=messages,
     model="gpt-5.2"
 )
 
-response = chat_completion.choices[0].message.content
-print(response)
+print(response.output_text)
