@@ -1,13 +1,12 @@
 import os
 
 from dotenv import load_dotenv
+from openai import OpenAI
 from openai.types.responses import EasyInputMessageParam
 
 load_dotenv()
 # this will give precedence to the entry in .env file even if system environment variable is set
 # load_dotenv(override=True)
-
-from openai import OpenAI
 
 api_key = os.getenv("OPENAI_API_KEY")
 
